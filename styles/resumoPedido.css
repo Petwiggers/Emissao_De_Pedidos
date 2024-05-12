@@ -1,13 +1,15 @@
 #body{
     background-color: rgb(216, 216, 216);
-    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 #dadosCliente{
-    width: 70%;
+    width: 800px;
     border-radius: 30px;
     padding: 20px;
-    background-color: #436743;
-    color: white;
+    border: 2px solid #436743;
+    color: #436743;
 }
 
 #dadosCliente h5{
@@ -21,6 +23,7 @@
     display: inline-block;
     margin: 0;
     margin-right: 15px;
+    text-decoration: underline;
 }
 
 .bloco{
@@ -34,10 +37,11 @@
     font-size: 15px;
 }
 table {
-    width: 100%;
+    width: 800px;
     border-collapse: collapse;
     margin-bottom: 20px; /* Espaçamento inferior */
-    background-color: rgb(170, 234, 212);
+    background-color: #436743;
+    border-radius: 20px;
 }
 
 /* Estilo para as células de cabeçalho */
@@ -52,12 +56,8 @@ th {
 td {
     border: 1px solid #dddddd; /* Borda */
     padding: 8px; /* Espaçamento interno */
+    color: white;
 }
-
-/* Estilo para linhas alternadas (opcional)
-tr:nth-child(even) {
-    background-color: #f9f9f9; /* Cor de fundo para linhas pares 
-} */
 
 #valorTotal{
     background-color: red;
