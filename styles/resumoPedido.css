@@ -3,9 +3,11 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin: 0;
+    padding: 20px;
 }
 #dadosCliente{
-    width: 800px;
+    width: 700px;
     border-radius: 30px;
     padding: 20px;
     border: 2px solid #436743;
@@ -13,7 +15,7 @@
 }
 
 #dadosCliente h5{
-    margin: 0 3px 5px 15px;
+    margin: 0 3px 5px 30px;
     font-size: 15px;
     font-weight: bold;
     display: inline-block;
@@ -37,7 +39,7 @@
     font-size: 15px;
 }
 table {
-    width: 800px;
+    width: 700px;
     border-collapse: collapse;
     margin-bottom: 20px; /* Espaçamento inferior */
     background-color: #436743;
@@ -63,23 +65,3 @@ td {
     background-color: red;
 }
 
-#formularioCliente{
-    padding: 30px;
-    background-color: aqua;
-    width: 60%;
-    border-radius: 20px;
-}
-
-#formularioCliente label{
-    margin: 0 15px 15px 15px;
-    font-size: 15px;
-    font-weight: bold;
-}
-
-#formularioCliente input textare{
-    font-size: 15px;
-    height: 25px;
-    background-color: transparent;
-    border: none;
-    border-radius: 30px;
-}

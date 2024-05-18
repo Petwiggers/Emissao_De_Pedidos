@@ -10,7 +10,6 @@ document.getElementById('btnGerarPDF').addEventListener('click', () => {
 
     //CONFIGURAÇÃO DO ARQUIVO FINAL DO PDF
     const options = {
-        margin : [5,5,5,5],
         filename: `${cliente.nome}_${cliente.cpf_cnpj}.pdf`,
         html2canvas: {scale: 12},
         jsPDF: {unit: "mm", format: "a4", orientation: "portrait"}
