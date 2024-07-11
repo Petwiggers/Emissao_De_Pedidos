@@ -4,40 +4,40 @@ let produtos = JSON.parse(localStorage.getItem('Produtos'));
 console.log(produtos);
 
 // Adiciona um evento de clique ao botão para chamar a função gerarPDF
-document.getElementById('btnGerarPDF').addEventListener('click', () => {
-    //CONTEÚDO DO PDF
-    const body = document.querySelector('body');
-
-    //CONFIGURAÇÃO DO ARQUIVO FINAL DO PDF
-    const options = {
-        filename: `${cliente.nome}_${cliente.cpf_cnpj}.pdf`,
-        html2canvas: {scale: 12},
-        jsPDF: {unit: "mm", format: "a4", orientation: "portrait"}
-    }
-
-    //GERAR E BAIXAR PDF
-    html2pdf().set(options).from(body).save();
-    localStorage.removeItem('Produtos');
-    localStorage.removeItem('Cliente');
+document.getElementById('generate-pdf').addEventListener('click', () => {
+    const element = document.getElementById('documento');
+    html2pdf()
+        .from(element)
+        .set({
+            filename: 'documento-cliente.pdf',
+            html2canvas: { scale: 2 },
+            jsPDF: { unit: 'mm', format: 'a4', orientation: 'landscape' }, // Orientação paisagem
+            pagebreak: { mode: ['avoid-all', 'css', 'legacy'] }
+        })
+        .save();
 });
 
+function formatarDinheiro(valor) {
+    return valor.toFixed(2).replace('.', ',').replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1.');
+}
+
 document.addEventListener('DOMContentLoaded', function() {
-    document.getElementById('nome').textContent = cliente.nome;
-    document.getElementById('dataNascimento').textContent  = cliente.dataNascimento;
-    document.getElementById('cpf_cnpj').textContent = cliente.cpf_cnpj;
-    document.getElementById('endereco').textContent = cliente.endereco;
-    document.getElementById('numeroCasa').textContent = cliente.numeroCasa;
-    document.getElementById('bairro').textContent = cliente.bairro;
-    document.getElementById('cep').textContent = cliente.cep;
-    document.getElementById('cidade').textContent = cliente.cidade;
-    document.getElementById('estado').textContent = cliente.estado;
-    document.getElementById('telefoneResidencial').textContent = cliente.telefoneResidencial;
-    document.getElementById('telefonePessoal').textContent = cliente.telefonePessoal;
-    document.getElementById('proximidade').textContent = cliente.proximidade;
-    document.getElementById('vendedor').textContent = cliente.vendedor;
-    document.getElementById('numeroPedido').textContent = cliente.numeroPedido;
-    document.getElementById('observacao').textContent = cliente.observacao;
-    document.getElementById('email').textContent = cliente.email;
+    document.getElementById('nome').innerHTML = `<strong>Nome: </strong> ${cliente.nome}`;
+    document.getElementById('dataNascimento').innerHTML = `<strong>Data de Nascimento: </strong> ${cliente.dataNascimento}`;
+    document.getElementById('cpf_cnpj').innerHTML = `<strong>Cpf/Cnpj: </strong> ${cliente.cpf_cnpj}`;
+    document.getElementById('endereco').innerHTML = `<strong>Endereço: </strong> ${cliente.endereco}`;
+    document.getElementById('numeroCasa').innerHTML = `<strong>N: </strong> ${cliente.numeroCasa}`;
+    document.getElementById('bairro').innerHTML = `<strong>Bairro: </strong> ${cliente.bairro}`;
+    document.getElementById('cep').innerHTML = `<strong>Cep: </strong> ${cliente.cep}`;
+    document.getElementById('cidade').innerHTML = `<strong>Cidade: </strong> ${cliente.cidade}`;
+    document.getElementById('estado').innerHTML = `<strong>Estado: </strong> ${cliente.estado}`;
+    document.getElementById('telefoneResidencial').innerHTML = `<strong>Telefone Residencial: </strong> ${cliente.telefoneResidencial}`;
+    document.getElementById('telefonePessoal').innerHTML = `<strong>Telefone Pessoal: </strong> ${cliente.telefonePessoal}`;
+    document.getElementById('proximidade').innerHTML = `<strong>Proximidade: </strong> ${cliente.proximidade}`;
+    document.getElementById('vendedor').innerHTML = `<strong>Vendedor: </strong> ${cliente.vendedor}`;
+    document.getElementById('numeroPedido').innerHTML = `<strong>N. Pedido: </strong> ${cliente.numeroPedido}`;
+    document.getElementById('observacao').innerHTML = `<strong>Obs: </strong> ${cliente.observacao}`;
+    document.getElementById('email').innerHTML = `<strong>Email: </strong> ${cliente.email}`;
 });
 
 document.addEventListener("DOMContentLoaded", function(){
@@ -56,7 +56,7 @@ document.addEventListener("DOMContentLoaded", function(){
         linha.insertCell().textContent = x.comando; 
         linha.insertCell().textContent = x.bando; 
         linha.insertCell().textContent = x.colocacao; 
-        linha.insertCell().textContent = x.preco; 
+        linha.insertCell().textContent = formatarDinheiro(x.preco); 
     });
     let linha = tbody.insertRow();
     linha.insertCell().textContent = ""; 
@@ -70,7 +70,7 @@ document.addEventListener("DOMContentLoaded", function(){
     linha.insertCell().textContent = ""; 
     linha.insertCell().textContent = ""; 
     linha.insertCell().textContent = ""; 
-    linha.insertCell().textContent = `R$ ${total}`; 
+    linha.insertCell().textContent = formatarDinheiro(total); 
 })
 
 

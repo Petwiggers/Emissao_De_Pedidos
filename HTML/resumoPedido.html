@@ -1,72 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Resumo do Pedido</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script type="module" src="../JS/resumoPedido.js" defer></script>
+    <title>Emissão de Pedidos</title>
     <link rel="stylesheet" href="../styles/resumoPedido.css">
+    <script src="../JS/resumoPedido.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 </head>
+<body>
+    <button id="generate-pdf">Gerar PDF</button>
+    <div class="container" id="documento">
 
-<body id="body">
-    <h1>Dados do Cliente</h1>
-    
-    <section id="dadosCliente">
-            <div class="bloco">
-                <h5>Nome: </h5><p id="nome"></p>
-                <h5>Data de Nascimento: </h5><p id="dataNascimento"></p>
-                <h5>Cpf/Cnpj: </h5><p id="cpf_cnpj"></p><br>
+
+        <div class="header">
+            <h1>Pedido do Cliente</h1>
+        </div>
+
+        <div class="client-info">
+            <h2>Dados do Cliente</h2>
+            <div id="conteiner_info">
+                <div>
+                    <p id="nome"></p>
+                    <p id="dataNascimento"></p>
+                    <p id="cpf_cnpj"></p>
+                    <p id="endereco"></p>
+                    <p id="numeroCasa"></p>
+                </div>
+                <div>
+                    <p id="bairro"></p>
+                    <p id="cep"></p>
+                    <p id="cidade"></p>
+                    <p id="estado"></p>
+                    <p id="telefoneResidencial"></p>
+                </div>
+                <div>
+                    <p id="telefonePessoal"></p>
+                    <p id="proximidade"></p>
+                    <p id="vendedor"></p>
+                    <p id="numeroPedido"></p>
+                    <p id="observacao"></p>
+                    <p id="email"></p>
+                </div>
+                
+
             </div>
-            <div class="bloco">
-                <h5>Endereço: </h5><p id="endereco"></p>
-                <h5>N°: </h5><p id="numeroCasa"></p>
-                <h5>Bairro: </h5><p id="bairro"></p><br>
-            </div>
-            <div class="bloco">
-                <h5>Cep: </h5><p id="cep"></p>
-                <h5>Cidade: </h5><p id="cidade"></p>
-                <h5>Estado: </h5><p id="estado"></p><br>
-            </div>
-            <div class="bloco">
-                <h5>Tel Residencial: </h5><p id="telefoneResidencial"></p>
-                <h5>Tel Pessoal: </h5><p id="telefonePessoal"></p>
-                <h5>Proximidade: </h5><p id="proximidade"></p><br>
-            </div>
-            <div class="bloco">
-                <h5>Vendedor: </h5><p id="vendedor"></p>
-                <h5>N° Pedido: </h5><p id="numeroPedido"></p>
-                <h5>Obs: </h5><p id="observacao"></p>
-                <h5>Email: </h5><p id="email"></p><br>
-            </div>
-    </section>
-    <h1>Detalhamento dos Produtos</h1>
-    <section id="dadosProdutos">
-            <table class="tabela">
+        </div>
+        <div class="product-table">
+            <h2>Especificações dos Produtos</h2>
+            <table>
                 <thead>
                     <tr>
-                        <th>Local</th>
-                        <th>UN</th>
-                        <th>Larg</th>
-                        <th>Alt</th>
-                        <th>M2</th>
-                        <th>Corrente</th>
-                        <th>Modelo</th>
-                        <th>Comando</th>
-                        <th>Bando</th>
-                        <th>Fixação</th>
-                        <th>Preço</th>
-                        <th id="valorTotal">Valot Total</th>
+                        <tr>
+                            <th>Local</th>
+                            <th>UN</th>
+                            <th>Larg</th>
+                            <th>Alt</th>
+                            <th>M2</th>
+                            <th>Corrente</th>
+                            <th>Modelo</th>
+                            <th>Comando</th>
+                            <th>Bando</th>
+                            <th>Fixação</th>
+                            <th>Preço</th>
+                            <th id="valorTotal">Valot Total</th>
+                        </tr>
                     </tr>
                 </thead>
                 <tbody id="tbody">
                     
                 </tbody>
             </table>
-        <button id="btnGerarPDF">Gerar PDF</button>
-    </section>
-
+        </div>
+    </div>
 </body>
-
 </html>
