@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emissão de Pedidos</title>
+    <link rel="stylesheet" href="../styles/resumoPedido.css">
+    <script src="../JS/resumoPedido.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+</head>
+<body>
+    <button id="generate-pdf">Gerar PDF</button>
+    <div class="container" id="documento">
+        <div class="overlay"></div>
+
+        <div class="header">
+            <h1>Pedido do Cliente</h1>
+        </div>
+
+        <div class="client-info">
+            <h2>Dados do Cliente</h2>
+            <div id="conteiner_info">
+                <div>
+                    <p id="nome"></p>
+                    <p id="dataNascimento"></p>
+                    <p id="cpf_cnpj"></p>
+                    <p id="endereco"></p>
+                    <p id="numeroCasa"></p>
+                </div>
+                <div>
+                    <p id="bairro"></p>
+                    <p id="cep"></p>
+                    <p id="cidade"></p>
+                    <p id="estado"></p>
+                    <p id="telefoneResidencial"></p>
+                </div>
+                <div>
+                    <p id="telefonePessoal"></p>
+                    <p id="proximidade"></p>
+                    <p id="vendedor"></p>
+                    <p id="numeroPedido"></p>
+                    <p id="observacao"></p>
+                    <p id="email"></p>
+                </div>
+                
+
+            </div>
+        </div>
+        <div class="product-table">
+            <h2>Especificações dos Produtos</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <tr>
+                            <th>Local</th>
+                            <th>UN</th>
+                            <th>Larg</th>
+                            <th>Alt</th>
+                            <th>M2</th>
+                            <th>Corrente</th>
+                            <th>Modelo</th>
+                            <th>Comando</th>
+                            <th>Bando</th>
+                            <th>Fixação</th>
+                            <th>Preço</th>
+                            <th id="valorTotal">Valot Total</th>
+                        </tr>
+                    </tr>
+                </thead>
+                <tbody id="tbody">
+                    
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>

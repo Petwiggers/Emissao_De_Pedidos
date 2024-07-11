@@ -1,0 +1,67 @@
+#body{
+    background-color: rgb(216, 216, 216);
+}
+
+#logoInformacoes{
+    display: flex;
+    justify-content: center;
+}
+
+.tituloFormulario{
+    color: #000000;
+    text-align: center;
+    margin-top: 50px;
+}
+/* Estilo para o formulário */
+form {
+    max-width: 700px;
+     /* Define a largura máxima do formulário */
+    margin: 0 auto; /* Centraliza o formulário na página */
+    padding: 30px; /* Espaçamento interno */
+    border: 1px solid #ddd; /* Borda */
+    background-color: #436743; /* Cor de fundo */
+    border-radius: 10px; /* Borda arredondada */
+    color: white;
+}
+
+/* Estilo para os campos de entrada */
+input[type="text"],
+input[type="number"],
+input[type="date"],
+input[type="email"],
+input[type="tel"],
+textarea {
+    width: 50%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 30px;
+    box-sizing: border-box; /* Garante que a largura do elemento inclua o preenchimento e a borda */
+}
+
+/* Estilo para os botões */
+button {
+    background-color: #007bff; /* Cor de fundo */
+    color: #fff; /* Cor do texto */
+    padding: 10px 20px; /* Espaçamento interno */
+    border: none; /* Remove a borda */
+    border-radius: 20px !important; /* Borda arredondada */
+    cursor: pointer; /* Cursor ao passar por cima */
+}
+
+/* Estilo para o botão de envio */
+button[type="submit"] {
+    background-color: #ffffff; /* Cor de fundo */
+    color: #000000;
+    border-radius: 20px;
+}
+
+/* Estilo para os rótulos */
+label {
+    font-weight: bold; /* Deixa o texto em negrito */
+    width: 25%;
+}
+
+.radio{
+ width: 100% !important;
+}

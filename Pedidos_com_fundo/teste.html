@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Imagem de Fundo com Cor Opaca</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background: url('./imagens/Logo.jpg') center/cover no-repeat; /* Imagem de fundo */
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff; /* Cor do texto */
+        }
+
+        .overlay {
+            background-color: #000; /* Cor de fundo */
+            opacity: 0.5; /* Opacidade */
+        }
+
+        .content {
+            z-index: 1;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 3em;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 1.2em;
+        }
+    </style>
+</head>
+<body>
+    <div class="overlay"></div> <!-- Camada de fundo com opacidade -->
+    <div class="content">
+        <h1>Bem-vindo</h1>
+        <p>Este é um exemplo de como colocar uma imagem de fundo com uma cor opaca por cima.</p>
+    </div>
+</body>
+</html>
