@@ -9,7 +9,7 @@ document.getElementById('generate-pdf').addEventListener('click', () => {
     html2pdf()
         .from(element)
         .set({
-            filename: 'documento-cliente.pdf',
+            filename: `${cliente.nome}_${cliente.cpf_cnpj}.pdf`,
             html2canvas: { scale: 2 },
             jsPDF: { unit: 'mm', format: 'a4', orientation: 'landscape' }, // Orientação paisagem
             pagebreak: { mode: ['avoid-all', 'css', 'legacy'] }
