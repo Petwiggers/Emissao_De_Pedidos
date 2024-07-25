@@ -70,26 +70,29 @@ th {
     background-color: #f2f2f2;
 }
 
-#generate-pdf {
+.button{
     display: block;
     margin: 20px;
     padding: 10px 20px;
-    background-color: #4CAF50;
     color: white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    background-color: #af4c4c;
+
 }
 
-#limparTodosDados{
-    display: block;
-    margin: 20px;
-    padding: 10px 20px;
+.conteiner_button #generate-pdf {
+    background-color: #4CAF50;
+}
+
+.conteiner_button #limparTodosDados{
     background-color: #af4c4c;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
+}
+
+.conteiner_button #voltarPedido{
+    background-color: #4c5caf;
+
 }
 
 .conteiner_button{

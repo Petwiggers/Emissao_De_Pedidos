@@ -23,6 +23,10 @@ document.getElementById("limparTodosDados").addEventListener('click', () => {
     window.location.reload();
 })
 
+document.getElementById('voltarPedido').addEventListener('click',() => {
+    window.location.href = "./pedido.html";
+})
+
 function formatarDinheiro(valor) {
     return valor.toFixed(2).replace('.', ',').replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1.');
 }
