@@ -17,6 +17,12 @@ document.getElementById('generate-pdf').addEventListener('click', () => {
         .save();
 });
 
+document.getElementById("limparTodosDados").addEventListener('click', () => {
+    localStorage.removeItem('Cliente');
+    localStorage.removeItem('Produtos');
+    window.location.reload();
+})
+
 function formatarDinheiro(valor) {
     return valor.toFixed(2).replace('.', ',').replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1.');
 }
