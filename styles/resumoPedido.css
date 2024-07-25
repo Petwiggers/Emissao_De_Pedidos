@@ -13,6 +13,7 @@ body {
 .container {
     width: calc(297mm - 40mm); /* A4 width minus the total margins */
     margin: 0 auto;
+    background: url("../imagens/logo02.jpg") no-repeat center center;
     padding: 20mm;
     background-color: #fff;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
