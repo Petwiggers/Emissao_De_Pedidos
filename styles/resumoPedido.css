@@ -32,6 +32,11 @@ body {
     flex-direction: row;
     justify-content: space-around;
 }
+
+#conteiner_info div{
+    max-width: 33%;
+    margin: 10px;
+}
 .client-info, .product-table {
     margin-bottom: 20px;
     page-break-inside: avoid;

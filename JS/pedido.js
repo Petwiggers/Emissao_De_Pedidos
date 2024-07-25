@@ -43,6 +43,7 @@ function salvarCliente(){
         email: document.getElementById('email').value
     }
     localStorage.setItem('Cliente',JSON.stringify(cliente));
+    alert("Cliente Salvo com Sucesso");
 }
 
 function salvarProduto(){
@@ -65,6 +66,7 @@ function salvarProduto(){
     console.log(produtos);
     localStorage.setItem('Produtos',JSON.stringify(produtos));
     limparFormulario();
+    alert("Produto Salvo com Sucesso");
 }
 
 
