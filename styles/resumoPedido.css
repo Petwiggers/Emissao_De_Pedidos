@@ -72,11 +72,28 @@ th {
 
 #generate-pdf {
     display: block;
-    margin: 20px auto;
+    margin: 20px;
     padding: 10px 20px;
     background-color: #4CAF50;
     color: white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
+}
+
+#limparTodosDados{
+    display: block;
+    margin: 20px;
+    padding: 10px 20px;
+    background-color: #af4c4c;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.conteiner_button{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
 }
