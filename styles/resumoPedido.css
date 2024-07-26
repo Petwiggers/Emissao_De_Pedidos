@@ -106,3 +106,12 @@ th {
     flex-direction: row;
     justify-content: center;
 }
+
+#contato{
+    font-size: 12px;
+}
+
+#contato img{
+    position: relative; 
+    top: 4px;
+}
