@@ -3,7 +3,6 @@ let produtos = JSON.parse(localStorage.getItem('Produtos'));
 if(produtos == null){
     produtos = [];
 }
-console.log(produtos);
 
 document.getElementById('formularioCliente').addEventListener('submit', function(event) {
     event.preventDefault(); 

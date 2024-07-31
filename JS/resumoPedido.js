@@ -1,7 +1,5 @@
 var cliente = JSON.parse(localStorage.getItem('Cliente'));
-console.log(cliente);
 let produtos = JSON.parse(localStorage.getItem('Produtos'));
-console.log(produtos);
 const hash = "9a0a570af51254c2f7e47f60448cecbb0201da866d7639ede1afd97aa24cad67";
 
 // Adiciona um evento de clique ao botão para chamar a função gerarPDF
