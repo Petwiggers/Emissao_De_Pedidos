@@ -2,9 +2,21 @@ var cliente = JSON.parse(localStorage.getItem('Cliente'));
 console.log(cliente);
 let produtos = JSON.parse(localStorage.getItem('Produtos'));
 console.log(produtos);
+const hash = "9a0a570af51254c2f7e47f60448cecbb0201da866d7639ede1afd97aa24cad67";
 
 // Adiciona um evento de clique ao botão para chamar a função gerarPDF
 document.getElementById('generate-pdf').addEventListener('click', () => {
+    const senha = prompt("Digite a senha : ");
+    let senhaHash = sha256(senha);
+    if(hash === senhaHash){
+        gerarPdf();
+    }else{
+        alert("Senha Incorreta !");
+    }
+    
+});
+
+function gerarPdf (){
     const element = document.getElementById('documento');
     html2pdf()
         .from(element)
@@ -15,7 +27,7 @@ document.getElementById('generate-pdf').addEventListener('click', () => {
             pagebreak: { mode: ['avoid-all', 'css', 'legacy'] }
         })
         .save();
-});
+}
 
 document.getElementById("limparTodosDados").addEventListener('click', () => {
     localStorage.removeItem('Cliente');
