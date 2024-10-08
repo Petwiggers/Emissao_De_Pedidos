@@ -1,0 +1,116 @@
+@page {
+    size: A4 landscape; /* Orientação paisagem */
+    margin: 20mm;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    width: calc(297mm - 40mm); /* A4 width minus the total margins */
+    margin: 0 auto;
+    background: url("../imagens/logo02.jpg") no-repeat center center;
+    padding: 20mm;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.header h1 {
+    margin: 0;
+}
+
+#conteiner_info{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+#conteiner_info div{
+    max-width: 33%;
+    margin: 10px;
+}
+.client-info, .product-table {
+    margin-bottom: 20px;
+    page-break-inside: avoid;
+}
+
+.client-info h2, .product-table h2 {
+    border-bottom: 1px solid #000;
+    padding-bottom: 5px;
+}
+
+.client-info p {
+    margin: 5px 0;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+    page-break-inside: auto; /* Permitir quebras dentro da tabela */
+}
+
+table, th, td {
+    border: 1px solid #000;
+}
+
+th, td {
+    padding: 8px;
+    text-align: left;
+    max-width: calc(100% - 16px); /* Largura máxima para ajuste dentro da célula */
+    overflow: hidden; /* Evitar que conteúdo transborde */
+    text-overflow: ellipsis; /* Adicionar "..." ao final do conteúdo se necessário */
+    /* white-space: nowrap; Evitar quebras de linha desnecessárias */
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+.button{
+    display: block;
+    margin: 20px;
+    padding: 10px 20px;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #af4c4c;
+
+}
+
+.conteiner_button #generate-pdf {
+    background-color: #4CAF50;
+}
+
+.conteiner_button #limparTodosDados{
+    background-color: #af4c4c;
+}
+
+.conteiner_button #voltarPedido{
+    background-color: #4c5caf;
+}
+
+.conteiner_button{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+#contato{
+    font-size: 12px;
+}
+
+#contato img{
+    position: relative; 
+    top: 4px;
+}
