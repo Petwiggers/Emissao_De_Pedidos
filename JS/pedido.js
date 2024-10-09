@@ -16,6 +16,8 @@ document.getElementById('formularioProduto').addEventListener('submit', function
     
 // Exemplo de como chamar a função limparFormulario
 document.getElementById('botaoLimpar').addEventListener('click', function() {
+    console.log('Limpou');
+    
     limparFormulario();
 });
 
@@ -23,6 +25,10 @@ document.getElementById('botaoLimpar').addEventListener('click', function() {
 
 
 function salvarCliente(){
+    const dataAtual = new Date();
+    const dia = String(dataAtual.getDate()).padStart(2, '0'); // Pega o dia e adiciona o zero à esquerda, se necessário
+    const mes = String(dataAtual.getMonth() + 1).padStart(2, '0'); // Pega o mês (adicionando +1, já que janeiro é 0)
+    const ano = dataAtual.getFullYear();
     const cliente = {
         nome: document.getElementById('nome').value,
         dataNascimento: document.getElementById('dataNascimento').value,
@@ -39,7 +45,8 @@ function salvarCliente(){
         vendedor: document.getElementById('vendedor').value,
         numeroPedido: document.getElementById('numeroPedido').value,
         observacao: document.getElementById('observacao').value,
-        email: document.getElementById('email').value
+        email: document.getElementById('email').value,
+        dataPedido: `${dia}/${mes}/${ano}`
     }
     localStorage.setItem('Cliente',JSON.stringify(cliente));
     alert("Cliente Salvo com Sucesso");
@@ -49,8 +56,8 @@ function salvarProduto(){
     const produto = {
         localInstalacao: document.getElementById('localInstalacao').value,
         unidades: document.getElementById('unidades').value,
-        largura: Number(document.getElementById('largura').value),
-        altura: Number(document.getElementById('altura').value),
+        largura: document.getElementById('largura').value,
+        altura: document.getElementById('altura').value,
         metrosQuadrado: "",
         alturaComando: document.getElementById('alturaComando').value,
         modeloCorNumero: document.getElementById('modeloCorNumero').value,
@@ -59,8 +66,10 @@ function salvarProduto(){
         colocacao: iterarElemento(document.getElementsByName('opcaoFixacao')),
         preco: Number(document.getElementById('preco').value),
     }
-    produto.metrosQuadrado = `${(produto.largura/100)*(produto.altura/100).toFixed(2)} m2`;
-    console.log(produto);
+    let largura = produto.largura.replace(',', '.')
+    let altura = produto.altura.replace(',','.')
+    produto.metrosQuadrado = `${(((parseFloat(largura))/100)*((parseFloat(altura))/100)).toFixed(2)} m2`;
+    
     produtos.push(produto);
     console.log(produtos);
     localStorage.setItem('Produtos',JSON.stringify(produtos));
